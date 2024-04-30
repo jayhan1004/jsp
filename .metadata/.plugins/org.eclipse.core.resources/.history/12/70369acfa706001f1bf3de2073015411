@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<div class="row justify-content-center">
+	<div class="col-10 col-md-8 col-lg-6">
+		<h1>마이페이지</h1>
+		<div class="card">
+			<div class="card-body"></div>
+				<div class="mb-4">
+					아이디 : ${user.uid}
+					<button class="btn btn-danger btn-sm ms-3">비밀번호변경</button>
+					<hr>
+				</div>
+				<div class="mb-4">
+					이름 : ${user.uname}
+					<hr>
+				</div>
+				<div class="mb-3">
+					주소 : ${user.address1} ${user.address2}
+					<hr>
+				</div>
+				<div class="mb-3">
+					연락처 : ${user.phone}
+					<hr>
+				</div>
+				<div class="mb-3">
+					가입일 : ${user.jdate}
+					<hr>
+				</div>
+				<div class="text-center mb-5">
+					<button class="btn btn-primary px-5">회원정보수정</button>
+				</div>
+		</div>
+	</div>
+</div>

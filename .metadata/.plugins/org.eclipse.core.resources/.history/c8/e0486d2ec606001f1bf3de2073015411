@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<style>
+	#modalInfo{
+		top:30%;
+	}
+</style>
+<!-- Modal -->
+<div class="modal fade" id="modalInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="staticBackdropLabel">회원정보수정</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<input id="uname" class="form-control mb-2" placeholder="이름" value="${user.uname}">
+				<input id="phone" class="form-control mb-2" placeholder="전화번호" value="${user.phone}">
+				<div class="input-group mb-1">
+					<input id="address1" class="form-control" value="${user.address1}">
+					<button class="btn btn-primary">검색</button>
+				</div>
+				<input id="address2" class="form-control" placeholder="상세주소" value="${user.address2}">
+			</div>
+			<div class="modal-footer">
+				<button id="btnSave" type="button" class="btn btn-primary">저장</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$("#btnSave").on("click", function(){
+		const uname=$("#uname").val();
+		const phone=$("#phone").val();
+		const address1=$("#address1").val();
+		const address2=$("#address2").val();
+		console.log(uname, phone, address1, address2, uid);
+		if(confirm("수정하시겠습니까?")){
+			//수정하는 백엔드 호출
+			$("#modalInfo").modal("hide");
+		}
+	});
+</script>
